@@ -1,6 +1,10 @@
 import functions from '../index';
 // import{originalFlavors}from '../index';
 let originalFlavors;
+let newFlavors;
+let seasonalFlavors;
+let regionalFlavors;
+
 beforeEach(()=>{
     originalFlavors = ["Banana Nut Fudge",
     "Black Walnut",
@@ -33,6 +37,86 @@ beforeEach(()=>{
     "Strawberry",
     "Vanilla",
     "Vanilla Burnt Almond"];
+
+    newFlavors = [
+        "Date night",
+        "U.S.S Butterscotch (Stranger Things special)",
+        "Honey Almond",
+        "Mint Chocolate Chip",
+        "Chocolate",
+        "Oreo® Cookies'n Cream",
+        "Chocolate Chip",
+        "Pralines 'n Cream",
+        "Very Berry Strawberry",
+        "Chocolate Chip Cookie Dough",
+        "Old Fashioned Butter Pecan",
+        "Jamoca®",
+        "Jamoca® Almond Fudge",
+        "Reese's® Peanut Butter Cup",
+        "Rocky Road",
+        "Peanut Butter ’n Chocolate",
+        "Gold Medal Ribbon®",
+        "World Class® Chocolate",
+        "Cherries Jubilee",
+        "Chocolate Fudge",
+        "Daiquiri Ice",
+        "Rainbow Sherbet",
+        "Rainbow Swirl"
+    ] 
+    
+    seasonalFlavors = [
+        "America's Birthday Cake",
+        "Baseball Nut®",
+        "Blueberry Cheesecake",
+        "Bourbon Street Pecan Pie",
+        "Brownie Bar Mashup",
+        "Cherry Cordial with Kisses",
+        "Chocolate Mousse Royale",
+        "French Vanilla",
+        "Eggnog",
+        "German Chocolate Cake",
+        "Icing on the Cake",
+        "Love Potion #31",
+        "New York Cheesecake",
+        "Nutty Coconut",
+        "Peppermint",
+        "Strawberry Cheesecake",
+        "Rock ’n Pop Swirl",
+        "Reese’s Peanut Butter Cup",
+        "Trick Oreo Treat",
+        "Winter White Chocolate",
+        "made with Snickers®",
+        "made with M&M's®",
+        "Heath®",
+        "Mango Tango"
+    ]
+    
+    regionalFlavors = [
+        "Pink Bubblegum",
+        "Caramel Macchiato",
+        "York Peppermint Pattie",
+        "Cotton Candy",
+        "Orange Sherbet",
+        "Grape Ice",
+        "Watermelon Ice",
+        "Miami Vice Sorbet",
+        "Splish Splash®",
+        "Wild 'n Reckless Sherbet",
+        "Lemon Custard",
+        "Oregon Blackberry",
+        "Bananas ‘n Strawberries",
+        "Mississippi Mud",
+        "Rum Raisin",
+        "Creole Cream Cheese",
+        "Chocolate Almond",
+        "Fudge Brownie",
+        "Banana Nut",
+        "Black Walnut",
+        "Cotton Candy Crackle",
+        "Quarterback Crunch",
+        "Chocolate Chocolate Chip Cheesecake",
+        "Caramel 'n' Cookies"
+    ]
 })
 
 describe('fooFunction', ()=>{
@@ -177,5 +261,21 @@ describe('filterByWord', ()=>{
             'Chocolate Mint',
             'Chocolate Ribbon'
           ]);
+    })
+});
+
+describe('getAverageWordLength', () => {
+    it('getAverageWordLength returns the average number of words in an array', () => {
+        expect(functions.getAverageWordLength(originalFlavors)).toEqual(1.8387096774193548)
+    })
+});
+
+describe('getRandomFlavors', () => {
+    it('getRandomFlavors randomly select a total of 31 flavors and stores it in an array called randomFlavors', () => {
+        expect(functions.getRandomFlavors([
+            originalFlavors, 
+            newFlavors, 
+            seasonalFlavors, 
+            regionalFlavors], 31)).toHaveLength(31)
     })
 });
