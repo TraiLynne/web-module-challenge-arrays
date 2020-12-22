@@ -266,8 +266,8 @@ describe('filterByWord', ()=>{
 
 describe('getAverageWordLength', () => {
     it('getAverageWordLength returns the average number of words in an array', () => {
-        expect(functions.getAverageWordLength(originalFlavors)).toEqual(1.8387096774193548)
-    })
+        expect(functions.getAverageWordLength(originalFlavors)).toEqual(1.8387096774193548);
+    });
 });
 
 describe('getRandomFlavors', () => {
@@ -276,6 +276,6 @@ describe('getRandomFlavors', () => {
             originalFlavors, 
             newFlavors, 
             seasonalFlavors, 
-            regionalFlavors], 31)).toHaveLength(31)
-    })
+            regionalFlavors], 31)).toHaveLength(31);
+    });
 });

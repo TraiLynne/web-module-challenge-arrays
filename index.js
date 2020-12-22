@@ -47,7 +47,7 @@ Use the copy function below to do the following:
 
 function copy(flavors){
     return [...flavors];
-}    
+};
 
 
 
@@ -66,7 +66,7 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 
 function is31Flavors(flavors){
    return flavors.length === 31;
-}
+};
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
@@ -85,7 +85,7 @@ function addFlavor(flavors, flavor){
    flavors.unshift(flavor);
 
    return flavors;
-}
+};
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -103,7 +103,7 @@ function removeLastFlavor(flavors){
    flavors.pop();
 
    return flavors;
-}
+};
 
 
 
@@ -120,7 +120,7 @@ Use the getFlavorByIndex function below to do the following:
 
 function getFlavorByIndex(flavors, selection){
     return flavors[selection];
-}
+};
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -142,7 +142,7 @@ function removeFlavorByName(flavors, flavor){
     flavors.splice(flavors.indexOf(flavor), 1);
 
     return flavors;
-}
+};
 
 
 
@@ -172,7 +172,7 @@ function filterByWord(flavors, keyWord){
 
     for(i ; i < flavors.length - 1 ; i++){
         flavors[i].includes(keyWord) ? filteredArray.push(flavors[i]) : null;
-    }
+    };
 
     return filteredArray;
 }
@@ -200,7 +200,7 @@ function getAverageWordLength(arr){
 
     return (avgWordLength / arr.length);
 
-}
+};
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪
 Baskin Robins now offers new flavors, seasonal flavors, and even regional flavors. Write a function that will randomly select a total of 31 flavors 
@@ -217,7 +217,7 @@ function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
-}
+};
 
 
 function getRandomFlavors(arrOfLists, limit){
@@ -231,7 +231,7 @@ function getRandomFlavors(arrOfLists, limit){
     }
 
     return newList;
-}
+};
 
 
 // NEW DATA ARRAYS FOR STRETCH 2 ⬇️
@@ -332,5 +332,5 @@ export default{
     filterByWord,
     getAverageWordLength,
     getRandomFlavors
-}
+};
 
