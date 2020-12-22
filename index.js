@@ -215,11 +215,26 @@ Use the getRandomFlavors function and new arrays below to do the following:
 
     For example: getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors) might return ["Strawberry Cheesecake", "Eggnog,"..."Chocolate"].
 */
-
-
-function getRandomFlavors(/*code here*/){
-    /*code here*/
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
 }
+
+
+function getRandomFlavors(arrOfLists, limit){
+    let newList = [];
+    
+    while(newList.length < limit) {
+        let listSelection = getRandomInt(0, arrOfLists.length);
+        let flavorSelection = getRandomInt(0, arrOfLists[listSelection].length);
+
+        newList.push(arrOfLists[listSelection][flavorSelection]);
+    }
+
+    return newList;
+}
+
 
 // NEW DATA ARRAYS FOR STRETCH 2 ⬇️
 const newFlavors = [
@@ -302,6 +317,14 @@ const regionalFlavors = [
     "Caramel 'n' Cookies"
 ]
 
+
+
+let newList = getRandomFlavors([
+    originalFlavors, 
+    newFlavors, 
+    seasonalFlavors, 
+    regionalFlavors], 31)
+console.log(newList, newList.length);
 
 
 /* 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 */
